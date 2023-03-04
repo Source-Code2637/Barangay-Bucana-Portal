@@ -1,5 +1,5 @@
 <?php 
-include_once ('datasource/DBConnect.php');
+include_once ('php_pages/DBConnect.php');
 
 function make_query($conn){
  $query = "SELECT * FROM `headlines` ORDER BY id ASC";
@@ -65,8 +65,8 @@ function make_slides($conn){
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="images/Brgy. Bucana Seal.png">
-<link rel="stylesheet" href="css/Home.css" >
+<link rel="icon" href="icons/Brgy. Bucana Seal.png">
+<link rel="stylesheet" href="css_styles/Home.css" >
 <!------------------------------------------------------ Alien Code Start --------------------------------------------------------------->
 <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -77,10 +77,10 @@ function make_slides($conn){
 </head>
 
 <body onload="startTime(); myFunction()">
-<?php $UserIP = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];?>
+
 <script>
 function myFunction() {
-  		 				alert("This Portal Is still for development and subject for Approval by BLGU of Barangay 76-A Bucana <?php echo $UserIP; ?>");
+  		 				alert("This Portal Is still for development and subject for Approval by BLGU of Barangay 76-A Bucana");
 }
 </script>
 	
@@ -89,7 +89,7 @@ function myFunction() {
 	
 	<div class="headerbar_text" id="TextSlide_Fixed">
 		<h1 style="max-width: 350px; font: italic">The Official Portal of Barangay 76-A Bucana</h1>
-		<img class="logo" src="images/Flag.jpg" alt="BRGY Logo">
+		<img class="logo" src="icons/Flag.jpg" alt="BRGY Logo">
 		<h1 style="text-align: right; width: auto">&nbsp; | &nbsp; <?php echo date("l, M d, Y"); ?> <a id="Timer"></a>  &nbsp; |
 		&nbsp;<a href="https://www.facebook.com/brgy76a/" style="text-decoration: none"><i class="fa fa-facebook-square" style="font-size: 20px"></i> &nbsp; Facebook</a> &nbsp; &nbsp; 
 		<a href="mailto:losamigosdavaocity.gov@gmail.com" style="text-decoration: none"><i class="fas fa-envelope" style="font-size: 20px"></i>&nbsp; &nbsp;Gmail &nbsp;&nbsp;</a><a href="tel:0822990796" style="text-decoration: none"><i class="fas fa-phone"> </i>  &nbsp; Contact Us </a>
@@ -98,7 +98,7 @@ function myFunction() {
 	
 	<div class="headerbar_text Appearingtext-title" style="height: inherit" id="TextSlide_Slide">
 		<h1 style="margin-left: 1px; max-width: 100%; height: 40px; margin-top: -15px"><span>The Official Portal of Barangay 76-A Bucana</span>&nbsp; &nbsp;
-		<img class="logo" src="images/Flag.jpg" alt="BRGY Logo">
+		<img class="logo" src="icons/Flag.jpg" alt="BRGY Logo">
 		&nbsp; | &nbsp; <?php echo date("l, M d, Y"); ?> <a id="Timer"></a>  &nbsp; |
 		&nbsp;<a href="https://www.facebook.com/brgy76a/" style="text-decoration: none"><i class="fa fa-facebook-square" style="font-size: 20px"></i> &nbsp; Facebook</a> &nbsp; &nbsp; 
 		<a href="mailto:losamigosdavaocity.gov@gmail.com" style="text-decoration: none"><i class="fas fa-envelope" style="font-size: 20px"></i>&nbsp; &nbsp;Gmail &nbsp;&nbsp;</a><i class="fas fa-phone"> </i>  &nbsp; Contact Us 
@@ -110,8 +110,8 @@ function myFunction() {
 <nav>
 	<div class="logo">
 		<a href="index.php">
-			<img id="Lblack" class="logo" src="images/BucanaLogoB1.png" alt="BRGY Logo" style="width: 150px">
-			<img id="Lwhite" class="logo" src="images/BucanaLogoW1.png" alt="BRGY Logo" style="width: 150px; display: none; padding: 10px 0">
+			<img id="Lblack" class="logo" src="icons/BucanaLogoB1.png" alt="BRGY Logo" style="width: 150px">
+			<img id="Lwhite" class="logo" src="icons/BucanaLogoW1.png" alt="BRGY Logo" style="width: 150px; display: none; padding: 10px 0">
 		</a>
 	</div>
     <input id="menu-toggle" type="checkbox" name="MenuBtn" />
@@ -122,7 +122,7 @@ function myFunction() {
     <ul class="menu" id="menu">
       <li onClick="uncheck()"><i class="fa fa-users" id="icon_label2"></i> <a onClick="document.getElementById('modal-official').style.display='block'" style="cursor: pointer">Barangay Officials</a> </li>
       <li><i class="far fa-newspaper" id="icon_label"></i>
-				<a href="datasource/News_And_Events.php">News and Events</a>
+				<a href="php_pages/News_And_Events.php">News and Events</a>
 			</li>
 			<li onClick="uncheck()"><i class="fas fa-map-marked-alt" id="icon_label"></i>
 				<a onclick="document.getElementById('modal-map').style.display='block'" style="cursor: pointer" > Barangay MAP</a>
@@ -138,7 +138,7 @@ function myFunction() {
 			</li>
 			<li class="divider"></li>
 			<li onClick="uncheck()"><i class="fa fa-sign-out-alt" id="icon_label"></i>
-				<a href="datasource/LogInServer.php" >Log In</a>
+				<a href="php_pages/LogInServer.php" >Log In</a>
 			</li>
     </ul>
 	<ul class="menu" id="menuWhite" style="display: none">
@@ -146,7 +146,7 @@ function myFunction() {
 				<a onclick="document.getElementById('modal-official').style.display='block'" style="cursor: pointer">Barangay Officials</a>
 			</li>
 			<li><i class="far fa-newspaper" id="icon_label"></i>
-				<a href="datasource/News_And_Events.php">News and Events</a>
+				<a href="php_pages/News_And_Events.php">News and Events</a>
 			</li>
 			<li onClick="uncheck()"><i class="fas fa-map-marked-alt" id="icon_label"></i>
 				<a onclick="document.getElementById('modal-map').style.display='block'" style="cursor: pointer" > Barangay MAP</a>
@@ -162,7 +162,7 @@ function myFunction() {
 			</li>
 			<li class="divider"></li>
 			<li onClick="uncheck()"><i class="fa fa-sign-out-alt" id="icon_label"></i>
-				<a href="datasource/LogInServer.php" >Log In</a>
+				<a href="php_pages/LogInServer.php" >Log In</a>
 			</li>
     </ul>
 </nav>
@@ -202,7 +202,7 @@ function myFunction() {
 <div class="footer" style="display: flex;overflow: auto">
 	
 <div class="left_logo">
-	<img src="images/DILG.png" alt="logo">
+	<img src="icons/DILG.png" alt="logo">
 </div>
 	
 <div class="headerword">
@@ -213,7 +213,7 @@ function myFunction() {
 </div>
 
 <div class="right_logo">
-	<img src="images/Brgy. Bucana Seal.png" alt="logo">
+	<img src="icons/Brgy. Bucana Seal.png" alt="logo">
 </div>
 
 </div>
@@ -521,7 +521,7 @@ while ($btres = mysqli_fetch_array($result)){
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="images/BID.png" alt="Avatar">
+      <img src="icons/BID.png" alt="Avatar">
 	  <p>Barangay ID</p>
     </div>
 	
@@ -539,7 +539,7 @@ while ($btres = mysqli_fetch_array($result)){
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="images/Brgy Clearance.png" alt="Avatar">
+      <img src="icons/Brgy Clearance.png" alt="Avatar">
 	  <p>Barangay Clearance</p>
     </div>
 	
@@ -556,7 +556,7 @@ while ($btres = mysqli_fetch_array($result)){
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="images/Residence.png" alt="Avatar">
+      <img src="icons/Residence.png" alt="Avatar">
 	  <p>Barangay Residency</p>
     </div>
 	
@@ -573,7 +573,7 @@ while ($btres = mysqli_fetch_array($result)){
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="images/Cedula.png" alt="Avatar">
+      <img src="icons/Cedula.png" alt="Avatar">
 	  <p>Cedula</p>
     </div>
 	
@@ -590,7 +590,7 @@ while ($btres = mysqli_fetch_array($result)){
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="images/idengent.png" alt="Avatar">
+      <img src="icons/idengent.png" alt="Avatar">
 	  <p>Indigency</p>
     </div>
 	
@@ -624,7 +624,7 @@ while ($cap = mysqli_fetch_array($result)){
 }
 ?>
 	<div class="welcome-btn">
-	<a href="datasource/LogInServer.php"><span></span>Join Us</a>
+	<a href="php_pages/LogInServer.php"><span></span>Join Us</a>
 	</div>
 </div>
 	
@@ -741,7 +741,7 @@ while ($row = mysqli_fetch_array($result)){
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="../images/CommunityIcon.png" alt="Avatar">
+      <img src="../icons/CommunityIcon.png" alt="Avatar">
 	  <p>Community Profiles</p>
     </div>
 	
@@ -757,7 +757,7 @@ while ($row = mysqli_fetch_array($result)){
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="../images/LogIcon.png" alt="Avatar">
+      <img src="../icons/LogIcon.png" alt="Avatar">
 	  <p>Log Records</p>
     </div>
     <div class="flip-card-back">
@@ -771,7 +771,7 @@ while ($row = mysqli_fetch_array($result)){
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="../images/settings.png" alt="Avatar">
+      <img src="../icons/settings.png" alt="Avatar">
 	  <p>Settings</p>
     </div>
 	
@@ -786,7 +786,7 @@ while ($row = mysqli_fetch_array($result)){
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="../images/AddUser.png" alt="Avatar">
+      <img src="../icons/AddUser.png" alt="Avatar">
 	  <p>Authorized USERS</p>
     </div>
 	
@@ -803,7 +803,7 @@ while ($row = mysqli_fetch_array($result)){
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="../images/Access.png" alt="Avatar">
+      <img src="../icons/Access.png" alt="Avatar">
 	  <p>Access Log</p>
     </div>
 	
@@ -858,25 +858,25 @@ while ($row = mysqli_fetch_array($result)){
 <footer class="footer_images">
    <div class="footer_images_container">
 	   <div class="container_footerimg"> 
-       <a href="https://op-proper.gov.ph" ><img src="images/President.png" alt="img"></a>
+       <a href="https://op-proper.gov.ph" ><img src="icons/President.png" alt="img"></a>
        </div>
 	   <div class="container_footerimg"> 
-       <a href="http://www.davaocity.gov.ph" ><img src="images/Davao Seal.png" alt="img"></a>
+       <a href="http://www.davaocity.gov.ph" ><img src="icons/Davao Seal.png" alt="img"></a>
        </div>
 	   <div class="container_footerimg"> 
-	   <a href="index.html" ><img src="images/Brgy. Bucana Seal.png" alt="img"></a>
+	   <a href="index.html" ><img src="icons/Brgy. Bucana Seal.png" alt="img"></a>
        </div>
 	   <div class="container_footerimg"> 
-       <a href="http://www.philsys.gov.ph" ><img src="images/PSA.png" alt="img"></a> 
+       <a href="http://www.philsys.gov.ph" ><img src="icons/PSA.png" alt="img"></a> 
        </div>
 	   <div class="container_footerimg"> 
-       <a href="https://dilg.gov.ph" ><img src="images/DILG.png" alt="img"></a>
+       <a href="https://dilg.gov.ph" ><img src="icons/DILG.png" alt="img"></a>
        </div>
 	   <div class="container_footerimg"> 
-	   <a href="http://www.deped.gov.ph"><img src="images/DepEd.png" alt="img" style="margin-top: 10%"></a> 
+	   <a href="http://www.deped.gov.ph"><img src="icons/DepEd.png" alt="img" style="margin-top: 10%"></a> 
        </div>
 	   <div class="container_footerimg" > 
-       <a href="#"><img src="images/DvoLifePNG.png" alt="img" style="margin-top: 30%" > </a>
+       <a href="#"><img src="icons/DvoLifePNG.png" alt="img" style="margin-top: 30%" > </a>
        </div>
    </div>
 </footer>
